@@ -1,0 +1,10 @@
+#TODO
+[ ] getScores function to bring all scores from dataset
+[ ] saveRemovedNumbers function to save all the removed numbers into a dataset which can be used to check all the numbers removed so far.
+[ ] createRemovedNumbers function to create a file which will have all the removed numbers including it's campaign name.
+[ ] removeNumber function to remove number from the .txt file of the campaign
+[ ] removeUnkwnown function to remove mailings that don't have any number
+
+
+#DONE
+[x] getFilex function to bring each file in the campaigns folder
