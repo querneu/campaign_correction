@@ -7,4 +7,6 @@
 
 
 #DONE
+
 [x] getFilex function to bring each file in the campaigns folder
+[x] watcher that seek for changes made in folder
