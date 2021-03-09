@@ -1,13 +1,22 @@
 const fs = require('fs');
 //Bring all files from the campaigns folder
-var files = fs.readdirSync('campaigns');
-const sab = new SharedArrayBuffer(1024);
-const int32 = new Int32Array(sab);
+const sleep = require('system-sleep');
 
-//For each mapped file you can perform individual action using the callback
+
+//This function will repeat itself to seek changes in the folder
 function getFiles() {
-    var mappedFiles = files.map((file) => {
-        console.log(file);
-    });
+    var files = fs.readdirSync('campaigns');
+    var timer = 1;//Seconts that the program will wait for the new files to arrive via ftp
+    //For each mapped file you can perform individual action using the callback
+    for (timer; timer > 0; timer--) {
+        console.log(`Aguardando ${timer} segundos para continuar...`);
+        sleep(1000);
+    }
 
+    var mappedFiles = files.map((file) => {
+        console.log(`Arquivo: ${file} pronto para processamento.`);
+    });
+    
+    setTimeout(getFiles, timer*1000);
 }
+getFiles();
